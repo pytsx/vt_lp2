@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "att2", "att2\att2.csproj", "{CE2C9D5C-E119-4D09-B5D2-542E7841975B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Att3", "Att3\Att3.csproj", "{B2E055B4-7B54-4CF8-8743-F0E9918909A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE2C9D5C-E119-4D09-B5D2-542E7841975B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE2C9D5C-E119-4D09-B5D2-542E7841975B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE2C9D5C-E119-4D09-B5D2-542E7841975B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE2C9D5C-E119-4D09-B5D2-542E7841975B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E055B4-7B54-4CF8-8743-F0E9918909A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E055B4-7B54-4CF8-8743-F0E9918909A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E055B4-7B54-4CF8-8743-F0E9918909A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E055B4-7B54-4CF8-8743-F0E9918909A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
