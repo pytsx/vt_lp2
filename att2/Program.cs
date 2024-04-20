@@ -35,7 +35,7 @@
                         else opt = CreateDialog("número máximo de funcionários atingido \n");
                         break;
                     case "3":
-                        app.Imprimir();
+                        app.Print();
                         opt = CreateDialog();
                         break;
                     default:
@@ -75,7 +75,7 @@
         }
 
 
-        private void Imprimir()
+        private void Print()
         {
             Console.WriteLine("Imprimindo relatório");
 
