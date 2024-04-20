@@ -4,46 +4,14 @@ namespace ATT2
     {
         public static void CreateMenu(string[] opts)
         {
-            Console.WriteLine("");
-            foreach (string opt in opts)
-            {
-                Console.WriteLine(opt);
-            }
-            Console.WriteLine("");
+            foreach (string opt in opts) Console.WriteLine(opt);
         }
 
-        public class FormData
+        public static T? ReadValue<T>(string message) 
         {
-            public Dictionary<string, string> Values { get; private set; }
-
-            public FormData()
-            {
-                Values = new Dictionary<string, string>();
-            }
-
-            public void AddField(string field, string? value)
-            {
-                Values[field] = value != null ? value : "";
-            }
-            
-        }
-
-        public delegate void Callback(FormData formData);
-
-        public static void CreateForm(string[] fields, Callback callback)
-        {
-
-            FormData formData = new();
-
-            foreach (string field in fields)
-            {
-                Console.Write(field + " --> ");
-                string? input = Console.ReadLine();
-                formData.AddField(field, input);
-            }
-
-            callback.Invoke(formData);
-
+            Console.Write(message + " ");
+            string? input = Console.ReadLine();
+            return (T?)Convert.ChangeType(input, typeof(T));
         }
     }
 }

@@ -1,38 +1,33 @@
-namespace ATT2 {
+namespace ATT2
+{
 
 
-    class EmpregadoHorista(string _nome, string _cpf, string _endereco, int _nHora, double _precoH) : Empregado (_cpf, _nome, _endereco) {
+    class EmpregadoHorista() : Empregado
+    {
+        private int NHora { get; set; } = 0;
+        private int PrecoH { get; set; } = 0;
+        private double SalLiqH { get; set; } = 0.0;
 
-        private int nHora = _nHora;
-        public int NHora {
-            get { return nHora;}
-            set { nHora = value; }
+        public double SalarioH()
+        {
+            return NHora * PrecoH * .85;
         }
 
-
-        private double precoH = _precoH;
-        public double PrecoH {
-            get { return precoH;}
-            set { precoH = value; }
-        }
-
-
-        private double salLiqH;
-        public double SalLiqH {
-            get { return salLiqH;}
-            set { salLiqH = value;}
-        }
-
-
-        public double SalarioH() {
-            return NHora  * precoH * .85;
-        }
-
-         public new void ExibirDadosEmpregados() {
-            base.ExibirDadosEmpregados();
+        public new void ExibirDados()
+        {
+            base.ExibirDados();
             Console.WriteLine(NHora);
             Console.WriteLine(SalLiqH);
             Console.WriteLine(SalarioH());
+        }
+
+        public new void InserirDados() 
+        {
+            base.InserirDados();
+
+            NHora = Util.ReadValue<int>("informe o numero de horas: ");
+            PrecoH = Util.ReadValue<int>("informe o preço por hora: ");
+            SalLiqH = SalarioH();
         }
     }
 }

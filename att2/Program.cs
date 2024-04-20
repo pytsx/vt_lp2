@@ -1,116 +1,102 @@
 ﻿namespace ATT2
 {
-    class Program {
-        private static EmpregadoCLT[] _EmpregadosCLT = [];
-        private static EmpregadoHorista[] _EmpregadosHorista = [];
-        
+    class Program
+    {
+        Empregado[] _Empregados = new Empregado[10];
+        int Index = 0;
 
-        private static int _index = 0;
-        private static int Index {
-            get { return _index; }
-            set { _index = value; }
-        }
 
-        public static void Main(string[] args) {
-            Console.WriteLine("Bem-vindo(a) ao Menu de Contabilidade e Recursos Humanos");
-            Console.WriteLine("=========================================================");
-            ShowMenu();
-            string? opt = Console.ReadLine();
-            while (opt != null && opt != "4") {
-                if(opt == "1"){
-                    if(Index <= 10) {
-                        Index++;
-                        InserirCLT();
-                        ShowMenu();
-                        opt = Console.ReadLine();
-                    } else {
-                        Console.WriteLine("número máximo de funcionários atingido");
-                        ShowMenu();
-                        opt = Console.ReadLine();
-                    }
-                } else if(opt == "2") {
-                    if(Index <= 10){
+        public static void Main(string[] args)
+        {
+            Program app = new();
 
-                    Index++;
-                    InserirHorista();
-                    ShowMenu();
-                    opt = Console.ReadLine();
-                    } else {
-                        Console.WriteLine("número máximo de funcionários atingido");
-                        ShowMenu();
-                        opt = Console.ReadLine();
-                    }
-                } else if(opt == "3") {
-                    Imprimir();
-                    ShowMenu();
-                    opt = Console.ReadLine();
-                } else {
-                    Console.WriteLine("opção inválida");
-                    ShowMenu();
-                    opt = Console.ReadLine();
+            string? opt = CreateDialog("Bem-vindo(a) ao Menu de Contabilidade e Recursos Humanos \n");
+
+            while (opt != null && opt != "4")
+            {
+                switch (opt)
+                {
+                    case "1":
+                        if (app.Index <= 10)
+                        {
+                            app.InserirCLT();
+                            app.Index++;
+                            opt = CreateDialog();
+                        }
+                        else opt = CreateDialog("número máximo de funcionários atingido \n");
+                        break;
+                    case "2":
+                        if (app.Index <= 10)
+                        {
+                            app.InserirHorista();
+                            app.Index++;
+                            opt = CreateDialog();
+                        }
+                        else opt = CreateDialog("número máximo de funcionários atingido \n");
+                        break;
+                    case "3":
+                        app.Imprimir();
+                        opt = CreateDialog();
+                        break;
+                    default:
+                        opt = CreateDialog("opção inválida \n");
+                        break;
                 }
             }
+        }
 
-            
-        }   
-
-        public static void ShowMenu() {
+        private static string? CreateDialog(string? message = "")
+        {
             Util.CreateMenu([
+                message ?? "\n",
                 "[1] Cadastrar Empregado CLT",
                 "[2] Cadastrar Empregado Horista",
                 "[3] Imprimir Relatório de Empregados",
                 "[4] Sair"
             ]);
+            return Util.ReadValue<string>("\ninforme um valor: ");
         }
 
 
-        public static void InserirCLT() {
+        private void InserirCLT()
+        {
             Console.WriteLine("Cadastrando empregado CLT");
-            Util.CreateForm(["nome", "cpf", "endereço", "salarioBruto"], (formdata) => {
-                string nome = formdata.Values["nome"];
-                string cpf = formdata.Values["cpf"];
-                string endereco = formdata.Values["endereço"];
-                double salarioBruto = Convert.ToDouble(formdata.Values["salarioBruto"]);
-
-                Array.Resize(ref _EmpregadosCLT, _EmpregadosCLT.Length + 1);
-
-                _EmpregadosCLT[_EmpregadosCLT.Length - 1] = new EmpregadoCLT(nome, cpf, endereco, salarioBruto);
-            });
+            EmpregadoCLT clt = new();
+            clt.InserirDados();
+            _Empregados[Index] = clt;
         }
 
-        public static void InserirHorista() {
+        private void InserirHorista()
+        {
             Console.WriteLine("Cadastrando empregado Horista");
-            Util.CreateForm(["nome", "cpf", "endereço", "nHora", "precoH"], (formdata) => {
-                string nome = formdata.Values["nome"];
-                string cpf = formdata.Values["cpf"];
-                string endereco = formdata.Values["endereço"];
-                int nHora = Convert.ToInt32(formdata.Values["nHora"]);
-                double precoH = Convert.ToDouble(formdata.Values["precoH"]);
-                Array.Resize(ref _EmpregadosHorista, _EmpregadosHorista.Length + 1);
-                _EmpregadosHorista[_EmpregadosHorista.Length - 1] = new EmpregadoHorista(nome, cpf, endereco, nHora, precoH);
-            
-            });
+            EmpregadoHorista horista = new();
+            horista.InserirDados();
+            _Empregados[Index] = horista;
         }
 
 
-        public static void Imprimir() {
+        private void Imprimir()
+        {
             Console.WriteLine("Imprimindo relatório");
 
-            Console.WriteLine("");
-            Console.WriteLine("Empregados CLT");
-            foreach (EmpregadoCLT empregado in _EmpregadosCLT) 
+            Console.Write("\ntotal empregados: ");
+            Console.WriteLine(Index);
+            for (int i = 0; i < Index; i++)
             {
-                empregado.ExibirDadosEmpregados();
+                
                 Console.WriteLine("");
-            }
-
-            Console.WriteLine("");
-            Console.WriteLine("Empregados CLT");
-            foreach (EmpregadoHorista empregado in _EmpregadosHorista) 
-            {
-                empregado.ExibirDadosEmpregados();
-                Console.WriteLine("");
+                if (_Empregados[i].GetType() == typeof(EmpregadoHorista))
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    ((EmpregadoHorista)_Empregados[i]).ExibirDados();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    ((EmpregadoCLT)_Empregados[i]).ExibirDados();
+                }
+                Console.ResetColor();
             }
         }
-    } 
+    }
 }

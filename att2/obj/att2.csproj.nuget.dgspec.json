@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\henri\\Desktop\\LP2\\att2\\att2.csproj": {}
+    "C:\\Users\\henri\\OneDrive\\Área de Trabalho\\vt_lp2\\att2\\att2.csproj": {}
   },
   "projects": {
-    "c:\\Users\\henri\\Desktop\\LP2\\att2\\att2.csproj": {
+    "C:\\Users\\henri\\OneDrive\\Área de Trabalho\\vt_lp2\\att2\\att2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\henri\\Desktop\\LP2\\att2\\att2.csproj",
+        "projectUniqueName": "C:\\Users\\henri\\OneDrive\\Área de Trabalho\\vt_lp2\\att2\\att2.csproj",
         "projectName": "att2",
-        "projectPath": "c:\\Users\\henri\\Desktop\\LP2\\att2\\att2.csproj",
+        "projectPath": "C:\\Users\\henri\\OneDrive\\Área de Trabalho\\vt_lp2\\att2\\att2.csproj",
         "packagesPath": "C:\\Users\\henri\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\henri\\Desktop\\LP2\\att2\\obj\\",
+        "outputPath": "C:\\Users\\henri\\OneDrive\\Área de Trabalho\\vt_lp2\\att2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\henri\\AppData\\Roaming\\NuGet\\NuGet.Config"

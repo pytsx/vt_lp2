@@ -1,32 +1,23 @@
 namespace ATT2
 {
-    class Empregado(string _nome, string _cpf, string _endereco)
+    internal class Empregado()
     {
-        private string nome = _nome;
-        public string Nome { 
-            get { return nome; }
-            set { nome = value; }
-         }
+        private string Nome  { get; set; } = "";
+        private string Cpf  { get; set; }= "";
+        private string Endereco { get; set; }= "";
 
-        private string cpf = _cpf;
-        public string Cpf {
-            get { return cpf; }
-            set { cpf = value; }
-        }
 
-        private string endereco = _endereco;
-        public string Endereco {
-            get { return endereco; }
-            set { endereco = value; }
+        public void ExibirDados() {
+            Console.WriteLine($"{Nome}");
+            Console.WriteLine($"{Cpf}");
+            Console.WriteLine($"{Endereco}");
         }
 
 
-        public void ExibirDadosEmpregados() {
-            Console.WriteLine(Nome);
-            Console.WriteLine(Cpf);
-            Console.WriteLine(Endereco);
+        public void InserirDados() {
+            Nome = Util.ReadValue<string>("informe o nome: ") ?? Nome;
+            Cpf = Util.ReadValue<string>("informe o CPF: ") ?? Cpf;
+            Endereco = Util.ReadValue<string>("informe o Endereco: ") ?? Endereco;
         }
-
-        
     }
 }

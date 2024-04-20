@@ -12,3 +12,18 @@ c:\Users\henri\Desktop\LP2\att2\obj\Debug\net8.0\refint\att2.dll
 c:\Users\henri\Desktop\LP2\att2\obj\Debug\net8.0\att2.pdb
 c:\Users\henri\Desktop\LP2\att2\obj\Debug\net8.0\att2.genruntimeconfig.cache
 c:\Users\henri\Desktop\LP2\att2\obj\Debug\net8.0\ref\att2.dll
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\obj\Debug\net8.0\att2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\obj\Debug\net8.0\att2.AssemblyInfoInputs.cache
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\obj\Debug\net8.0\att2.AssemblyInfo.cs
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\obj\Debug\net8.0\att2.csproj.CoreCompileInputs.cache
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\obj\Debug\net8.0\att2.sourcelink.json
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\obj\Debug\net8.0\att2.dll
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\obj\Debug\net8.0\refint\att2.dll
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\obj\Debug\net8.0\att2.pdb
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\bin\Debug\net8.0\att2.exe
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\bin\Debug\net8.0\att2.deps.json
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\bin\Debug\net8.0\att2.runtimeconfig.json
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\bin\Debug\net8.0\att2.dll
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\bin\Debug\net8.0\att2.pdb
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\obj\Debug\net8.0\att2.genruntimeconfig.cache
+C:\Users\henri\OneDrive\Área de Trabalho\vt_lp2\att2\obj\Debug\net8.0\ref\att2.dll

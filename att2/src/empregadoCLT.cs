@@ -1,31 +1,30 @@
 namespace ATT2
 {
-    class EmpregadoCLT(string _nome, string _cpf, string _endereco, double _salarioBruto) : Empregado(_nome, _cpf, _endereco)
+    class EmpregadoCLT() : Empregado
     {
-        private double sBrutoCLT = _salarioBruto;
-        public double SBrutoCLT {
-            get { return sBrutoCLT; }
-            set { sBrutoCLT = value;}
-        }
-
-        private double sLiqCLT;
-        public double SLiqCLT {
-            get { return sLiqCLT; }
-            set { sLiqCLT = value;}
-        }
-        
+        private double SBrutoClt {get; set;} = 0.0;
+        private double SLiqCLT {get; set;} = 0.0;
 
         public double SalarioCLT() {
-            if(SBrutoCLT <= 5000) return SLiqCLT = .8 * SBrutoCLT; 
-            SLiqCLT =  .725 * SBrutoCLT;
+            if(SBrutoClt <= 5000) return SLiqCLT = .8 * SBrutoClt; 
+            SLiqCLT =  .725 * SBrutoClt;
             return SLiqCLT;
         }
 
 
-        public new void ExibirDadosEmpregados() {
-            base.ExibirDadosEmpregados();
-            Console.WriteLine(SBrutoCLT);
+        public new void ExibirDados() {
+            base.ExibirDados();
+            Console.WriteLine(SBrutoClt);
             Console.WriteLine(SalarioCLT());
         }
+
+        public new void InserirDados() 
+        {
+            base.InserirDados();
+
+            SBrutoClt = Util.ReadValue<double>("informe o salário bruto: ");
+            SLiqCLT = SalarioCLT();
+        }
+
     }
 }
